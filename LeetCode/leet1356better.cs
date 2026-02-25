@@ -8,10 +8,11 @@ public class Solution
         {
             int bitCntA = BitOperations.PopCount((uint)a);
             int bitCntB = BitOperations.PopCount((uint)b);
+            int bitComparison = bitCntA.CompareTo(bitCntB);
 
-            if (bitCntA != bitCntB)
+            if (bitComparison != 0)
             {
-                return bitCntA - bitCntB;
+                return bitComparison;
             }
 
             return a.CompareTo(b);
