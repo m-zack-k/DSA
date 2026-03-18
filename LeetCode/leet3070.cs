@@ -1,3 +1,4 @@
+/*
 public class Solution
 {
     public int CountSubmatrices(int[][] grid, int k)
@@ -26,6 +27,31 @@ public class Solution
             {
                 grid[i][j] += grid[i - 1][j] + grid[i][j - 1] - grid[i - 1][j - 1];
                 if (grid[i][j] <= k)
+                {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}
+*/
+// memory optimization
+public class Solution
+{
+    public int CountSubmatrices(int[][] grid, int k)
+    {
+        int m = grid.Length, n = grid[0].Length;
+        int count = 0;
+        int[] col = new int[n];
+        for (int i = 0; i < m; ++i)
+        {
+            int rows = 0;
+            for (int j = 0; j < n; ++j)
+            {
+                col[j] += grid[i][j];
+                rows += col[j];
+                if (rows <= k)
                 {
                     count++;
                 }
