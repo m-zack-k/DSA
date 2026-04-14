@@ -15,8 +15,7 @@ public class Solution
         int rightRange = n - 1 - start;
 
         int d = 1;
-        while (true)
-        {
+        while (true){
             if (left >= 0 && nums[left] == target)
             {
                 return start - left;
