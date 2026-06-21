@@ -9,19 +9,22 @@
  *     }
  * }
  */
-public class Solution {
-    public ListNode DeleteMiddle(ListNode head) {
+public class Solution
+{
+    public ListNode DeleteMiddle(ListNode head)
+    {
         if (head.next == null) return null;
         ListNode slow = head;
         ListNode fast = slow.next.next;
-        while (fast != null && fast.next != null){
-            
+        while (fast != null && fast.next != null)
+        {
+
             fast = fast.next.next;
             slow = slow.next;
         }
-        
+
         slow.next = slow.next.next;
-        
+
         return head;
 
     }
